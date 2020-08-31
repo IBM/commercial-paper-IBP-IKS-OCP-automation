@@ -1,0 +1,19 @@
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+---
+# These vars are used in more than one file,
+# i.e. needed by multiple orgs so can't just live in a per org file
+ordering_org_name: "IPWEOrderer Org"
+ordering_service_name: "IPWEOrderer Service"
+org1_name: "IPWECorporate"
+org1_msp_id: "IPWECorporateMSP"
+org2_name: "IPWECoe"
+org2_msp_id: IPWECoeMSP
+channel_name: "ipwe-hyper-test"
+smart_contract_name: "fabcar"
+smart_contract_version: "1.0.0"
+smart_contract_package: "fabcar@1.0.0.cds"
+# smart_contract_constructor: "initLedger"
+# smart_contract_endorsement_policy: ""
+# smart_contract_collections_file: ""

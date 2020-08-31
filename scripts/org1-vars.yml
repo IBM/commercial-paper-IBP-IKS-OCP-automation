@@ -1,0 +1,20 @@
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+---
+api_endpoint: https://08baa2edf8494bfc9da89c0b9cece26c-ibpconsole-console.uss02.blockchain.cloud.ibm.com
+api_authtype: ibmcloud
+api_key: LIvSotvCUjUjEJH74uGr7RVVKUh86GXBdzY04gPjCsrt
+ca_admin_enrollment_id: ipweCorpCAAdmin
+ca_admin_enrollment_secret: ipweC0rpCAAdminPw
+organization_admin_enrollment_id: ipweCorpAdmin
+organization_admin_enrollment_secret: ipweC0rpAdminPw
+peer_enrollment_id: ipwCorpoPeer
+peer_enrollment_secret: ipwC0rpoPeerPw
+application_enrollment_id: ipwCorpoApp
+application_enrollment_secret: ipwC0rpoAppPw
+application_enrollment_type: client
+application_max_enrollments: 10
+org1_ca_name: "IPWECorporate CA"
+org1_peer_name: "IPWECorporate Peer"
+wait_timeout: 600

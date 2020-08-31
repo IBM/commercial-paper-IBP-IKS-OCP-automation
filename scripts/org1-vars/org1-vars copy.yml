@@ -1,0 +1,26 @@
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+---
+api_endpoint: https://f8ca71ff72a64c08a1be83ae726475c9-ibpconsole-console.uss02.blockchain.cloud.ibm.com
+api_authtype: ibmcloud
+api_key: LIvSotvCUjUjEJH74uGr7RVVKUh86GXBdzY04gPjCsrt
+ca_admin_enrollment_id: MagnetoCorpCAAdmin
+ca_admin_enrollment_secret: MagnetoCorpCAAdminPw
+organization_admin_enrollment_id: MagnetoCorpAdmin
+organization_admin_enrollment_secret: MagnetoCorpAdminPw
+peer_enrollment_id: MagnetoCorpPeer
+peer_enrollment_secret: MagnetoCorpPeerPw
+application_enrollment_id: MagnetoCorpApp
+application_enrollment_secret: MagnetoCorpAppPw
+application_enrollment_type: client
+application_max_enrollments: 10
+org1_ca_name: "MagnetoCorp CA"
+org1_peer_name: "MagnetoCorp Peer"
+peers: 3
+wait_timeout: 600
+org1_ca_zone: dal13
+zone_assignemnt:
+  - { zone: "dal10", peer: "1" }
+  - { zone: "dal12", peer: "2" }
+  - { zone: "dal13", peer: "3" }

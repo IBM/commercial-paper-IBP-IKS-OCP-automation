@@ -1,0 +1,26 @@
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+---
+api_endpoint: https://f8ca71ff72a64c08a1be83ae726475c9-ibpconsole-console.uss02.blockchain.cloud.ibm.com
+api_authtype: ibmcloud
+api_key: LIvSotvCUjUjEJH74uGr7RVVKUh86GXBdzY04gPjCsrt
+ca_admin_enrollment_id: DigiBankCAAdmin
+ca_admin_enrollment_secret: DigiBankCAAdminPw
+organization_admin_enrollment_id: DigiBankAdmin
+organization_admin_enrollment_secret: DigiBankAdminPw
+peer_enrollment_id: DigiBankPeer
+peer_enrollment_secret: DigiBankPeerPw
+application_enrollment_id: DigiBankApp
+application_enrollment_secret: DigiBankAppPw
+application_enrollment_type: client
+application_max_enrollments: 10
+org2_ca_name: "IPWECoe CA"
+org2_peer_name: "IPWECoe Peer"
+peers: 3
+wait_timeout: 600
+org2_ca_zone: dal10
+zone_assignemnt:
+  - { zone: "dal12", peer: "1" }
+  - { zone: "dal10", peer: "2" }
+  - { zone: "dal13", peer: "3" }

@@ -1,0 +1,20 @@
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+---
+api_endpoint: "{{vault_api_endpoint}}"
+api_authtype: ibmcloud
+api_key: "{{vault_api_key}}"
+ca_admin_enrollment_id: "{{vault_ca_admin_enrollment_id}}"
+ca_admin_enrollment_secret: "{{vault_ca_admin_enrollment_secret}}"
+organization_admin_enrollment_id: "{{vault_organization_admin_enrollment_id}}"
+organization_admin_enrollment_secret: "{{vault_organization_admin_enrollment_secret}}"
+ordering_service_enrollment_id: "{{vault_ordering_service_enrollment_id}}"
+ordering_service_enrollment_secret: "{{vault_ordering_service_enrollment_secret}}"
+ordering_service_msp: "{{vault_ordering_service_msp}}"
+ordering_service_nodes: 1
+wait_timeout: 600
+ordering_ca_zone: mil01
+ordering_zones:
+  - mil01
+  - mil01

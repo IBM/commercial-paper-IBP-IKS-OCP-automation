@@ -1,0 +1,16 @@
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+---
+api_endpoint: https://08baa2edf8494bfc9da89c0b9cece26c-ibpconsole-console.uss02.blockchain.cloud.ibm.com
+api_authtype: ibmcloud
+api_key: LIvSotvCUjUjEJH74uGr7RVVKUh86GXBdzY04gPjCsrt
+ca_admin_enrollment_id: ipweOrdererCAAdmin 
+ca_admin_enrollment_secret: ipwe0rdererCAAdminPw
+organization_admin_enrollment_id: ipweOrdererAdmin
+organization_admin_enrollment_secret: 0rdering0rgAdm1nPw
+ordering_service_enrollment_id: ipwOrderingOrderer
+ordering_service_enrollment_secret: ipwe0rderingPw
+ordering_service_msp: IPweOrdererMSP
+ordering_service_nodes: 1
+wait_timeout: 600
