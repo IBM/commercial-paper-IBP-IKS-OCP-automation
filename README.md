@@ -1,2 +1,2 @@
 # commercial-paper-IBP-IKS-OCP-automation
-We have 2 existing repositories within ibm enterprise github that consist of ansible playbook collections for the automated deployment of a simple blockchain network: one for deployment on ibm kubernetes cluster, the other for deployment on openshift. We have a developerWorks tutorial publication on how to utilize these ansible collections and need to publish the repositories on the ibm external open source github.
+There are two ansible collections included here to accompany an IBM Developer Tutorial on how to use the collections to automate deployment of a simple blockchain network on both IBM Kubernetes Service and Openshift.
