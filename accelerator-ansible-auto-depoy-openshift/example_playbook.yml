@@ -1,0 +1,240 @@
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+---
+- name: Deploy blockchain infrastructure and smart contracts
+  hosts: localhost
+  vars:
+    #
+    # For information on these configuration options, read the documentation:
+    # https://github.com/IBM-Blockchain/ansible-role-blockchain-platform-manager#example-playbook
+    #
+#    state: absent
+    infrastructure:
+      type: software
+      docker:
+        network: ibp_network
+      software:
+        api_endpoint: https://ibp-bc-ibpconsole-console.aais-1589822809013-f72ef11f3ab089a8c677044eb28292cd-0000.us-east.containers.appdomain.cloud:443
+        api_key: kIiFKz3GmifjXX
+        api_secret: U0Ne8OPMI_w0RUQpLjbLJGt7XX
+    organizations:
+      - &Digibank
+        msp:
+          id: "DigibankMSP"
+          admin:
+            identity: "digibankAdmin"
+            secret: "digibankAdminpw"
+          ibp:
+            display_name: "Digibank MSP"
+        ca: &DigibankCA
+          id: "DigibankCA"
+          admin_identity: "admin"
+          admin_secret: "adminpw"
+          tls:
+            enabled: true
+          docker:
+            name: ca.digibank.papernet.com
+            hostname: ca.digibank.papernet.com
+            port: 18050
+          ibp:
+            display_name: "Digibank CA"
+        peers:
+          - &DigibankPeer1
+            id: "DigibankPeer1"
+            identity: "digibankpeer1"
+            secret: "digibankpeer1pw"
+            database_type: couchdb
+            tls:
+              enabled: true
+              identity: "digibankpeer1tls"
+              secret: "digibankpeer1tlspw"
+            docker:
+              name: peer0.digibank.papernet.com
+              hostname: peer0.digibank.papernet.com
+              port: 18051
+              chaincode_port: 18052
+              operations_port: 18053
+              couchdb:
+                name: couchdb0.digibank.papernet.com
+                hostname: couchdb0.digibank.papernet.com
+                port: 18054
+            ibp:
+              display_name: "Digibank Peer1"
+          - &DigibankPeer2
+            id: "DigibankPeer2"
+            identity: "digibankpeer2"
+            secret: "digibankpeer2pw"
+            database_type: couchdb
+            tls:
+              enabled: true
+              identity: "digibankpeer2tls"
+              secret: "digibankpeer2tlspw"
+            docker:
+              name: peer1.digibank.papernet.com
+              hostname: peer1.digibank.papernet.com
+              port: 18055
+              chaincode_port: 18056
+              operations_port: 18057
+              couchdb:
+                name: couchdb1.digibank.papernet.com
+                hostname: couchdb1.digibank.papernet.com
+                port: 18058
+            ibp:
+              display_name: "Digibank Peer2"
+        nodes: "{{ playbook_dir }}/nodes/Digibank"
+        wallet: "{{ playbook_dir }}/wallets/Digibank"
+        gateways: "{{ playbook_dir }}/gateways/Digibank"
+      - &Magnetocorp
+        msp:
+          id: "MagnetocorpMSP"
+          admin:
+            identity: "magnetocorpAdmin"
+            secret: "magnetocorpAdminpw"
+          ibp:
+            display_name: "Magnetocorp MSP"
+        ca: &MagnetocorpCA
+          id: "MagnetocorpCA"
+          admin_identity: "admin"
+          admin_secret: "adminpw"
+          tls:
+            enabled: true
+          docker:
+            name: ca.magnetocorp.papernet.com
+            hostname: ca.magnetocorp.papernet.com
+            port: 19050
+          ibp:
+            display_name: "Magnetocorp CA"
+        peers:
+          - &MagnetocorpPeer1
+            id: "MagnetocorpPeer1"
+            identity: "magnetocorppeer1"
+            secret: "magnetocorppeer1pw"
+            database_type: leveldb
+            tls:
+              enabled: true
+              identity: "magnetocorppeer1tls"
+              secret: "magnetocorppeer1tlspw"
+            docker:
+              name: peer0.magnetocorp.papernet.com
+              hostname: peer0.magnetocorp.papernet.com
+              port: 19051
+              chaincode_port: 19052
+              operations_port: 19053
+              couchdb:
+                name: couchdb0.magnetocorp.papernet.com
+                hostname: couchdb0.magnetocorp.papernet.com
+                port: 19054
+            ibp:
+              display_name: "Magnetocorp Peer1"
+          - &MagnetocorpPeer2
+            id: "MagnetocorpPeer2"
+            identity: "magnetocorppeer2"
+            secret: "magnetocorppeer2pw"
+            database_type: leveldb
+            tls:
+              enabled: true
+              identity: "magnetocorppeer2tls"
+              secret: "magnetocorppeer2tlspw"
+            docker:
+              name: peer1.magnetocorp.papernet.com
+              hostname: peer1.magnetocorp.papernet.com
+              port: 19055
+              chaincode_port: 19056
+              operations_port: 19057
+              couchdb:
+                name: couchdb1.magnetocorp.papernet.com
+                hostname: couchdb1.magnetocorp.papernet.com
+                port: 19058
+            ibp:
+              display_name: "Magnetocorp Peer2"
+        nodes: "{{ playbook_dir }}/nodes/Magnetocorp"
+        wallet: "{{ playbook_dir }}/wallets/Magnetocorp"
+        gateways: "{{ playbook_dir }}/gateways/Magnetocorp"
+      - &OrdererOrg
+        msp:
+          id: "OrdererMSP"
+          admin:
+            identity: "ordererAdmin"
+            secret: "ordererAdminpw"
+          ibp:
+            display_name: "Orderer MSP"
+        ca: &OrdererCA
+          id: "OrdererCA"
+          admin_identity: "admin"
+          admin_secret: "adminpw"
+          tls:
+            enabled: true
+          docker:
+            name: ca.orderer.papernet.com
+            hostname: ca.orderer.papernet.com
+            port: 17050
+          ibp:
+            display_name: "Orderer CA"
+        orderer: &Orderer
+          id: "Orderer1"
+          identity: "orderer1"
+          secret: "orderer1pw"
+          tls:
+            enabled: true
+            identity: "orderer1tls"
+            secret: "orderer1tlspw"
+          consortium:
+            members:
+              - *Digibank
+              - *Magnetocorp
+          docker:
+            name: orderer.papernet.com
+            hostname: orderer.papernet.com
+            port: 17051
+            operations_port: 17052
+          ibp:
+            display_name: "Orderer1"
+            cluster_name: "OrdererCluster"
+        nodes: "{{ playbook_dir }}/nodes/Orderer"
+        wallet: "{{ playbook_dir }}/wallets/Orderer"
+        gateways: "{{ playbook_dir }}/gateways/Orderer"
+    channels:
+      - &Channel2
+        name: channel2
+        orderer: *Orderer
+        members:
+          - <<: *Digibank
+            committing_peers:
+              - *DigibankPeer1
+              - *DigibankPeer2
+            anchor_peers:
+              - *DigibankPeer1
+          - <<: *Magnetocorp
+            committing_peers:
+              - *MagnetocorpPeer1
+              - *MagnetocorpPeer2
+            anchor_peers:
+              - *MagnetocorpPeer1
+    contracts:
+      - name: papercontract
+        version: 0.0.1
+        package: "{{ playbook_dir }}/papercontract@0.0.1.cds"
+        channels:
+          - <<: *Channel2
+            endorsement_policy: "OR('DigibankMSP.member','MagnetocorpMSP.member')"
+            endorsing_members:
+              - <<: *Digibank
+                endorsing_peers:
+                  - <<: *DigibankPeer1
+              - <<: *Magnetocorp
+                endorsing_peers:
+                  - <<: *MagnetocorpPeer1
+    gateways:
+      - name: Digibank gateway
+        organization:
+          <<: *Digibank
+          gateway_peers:
+            - <<: *DigibankPeer1
+      - name: Magnetocorp gateway
+        organization:
+          <<: *Magnetocorp
+          gateway_peers:
+            - <<: *MagnetocorpPeer1
+  roles:
+    - ibm.blockchain_platform_manager
