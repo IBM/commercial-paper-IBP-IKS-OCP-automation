@@ -1,0 +1,20 @@
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+---
+api_endpoint: https://f8ca71ff72a64c08a1be83ae726475c9-ibpconsole-console.uss02.blockchain.cloud.ibm.com
+api_authtype: ibmcloud
+api_key: LIvSotvCUjUjEJH74uGr7RVVKUh86GXBdzY04gPjCsrt
+ca_admin_enrollment_id: PaperNetOrdererCAAdmin
+ca_admin_enrollment_secret: PaperNetOrdererCAAdminPw
+organization_admin_enrollment_id: PaperNetOrdererAdmin
+organization_admin_enrollment_secret: PaperNetOrderingOrgAdminPw
+ordering_service_enrollment_id: PaperNetOrderingOrderer
+ordering_service_enrollment_secret: PaperNetOrderingPw
+ordering_service_msp: PaperNetOrdererMSP
+ordering_service_nodes: 2
+wait_timeout: 600
+ordering_ca_zone: dal10
+ordering_zones:
+  - dal10
+  - dal10

@@ -1,0 +1,16 @@
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+---
+# These vars are used in more than one file,
+# i.e. needed by multiple orgs so can't just live in a per org file
+ordering_org_name: "PaperNetOrderer Org"
+ordering_service_name: "PaperNetOrderer Service"
+org1_name: "MagnetoCorp"
+org1_msp_id: "MagnetoCorpMSP"
+org2_name: "DigiBank"
+org2_msp_id: DigiBankMSP
+channel_name: "papernet-channel-1"
+smart_contract_name: "papercontract"
+smart_contract_version: "0.0.1"
+smart_contract_package: "papercontract@0.0.1.cds"

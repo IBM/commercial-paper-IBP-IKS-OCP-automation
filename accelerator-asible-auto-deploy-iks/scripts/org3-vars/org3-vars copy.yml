@@ -1,0 +1,25 @@
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+---
+api_endpoint: https://f8ca71ff72a64c08a1be83ae726475c9-ibpconsole-console.uss02.blockchain.cloud.ibm.com
+api_authtype: ibmcloud
+api_key: LIvSotvCUjUjEJH74uGr7RVVKUh86GXBdzY04gPjCsrt
+ca_admin_enrollment_id: BigFundCAAdmin
+ca_admin_enrollment_secret: BigFundCAAdminPw
+organization_admin_enrollment_id: BigFundAdmin
+organization_admin_enrollment_secret: BigFundAdminPw
+peer_enrollment_id: BigFundPeer
+peer_enrollment_secret: BigFundPeerPw
+application_enrollment_id: BigFundApp
+application_enrollment_secret: BigFundAppPw
+application_enrollment_type: client
+application_max_enrollments: 10
+org3_ca_name: "BigFund CA"
+org3_peer_name: "BigFund Peer"
+peers: 2
+wait_timeout: 600
+org3_ca_zone: dal10
+zone_assignemnt:
+  - { zone: "dal10", peer: "1" }
+  - { zone: "dal10", peer: "2" }
